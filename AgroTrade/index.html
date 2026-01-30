@@ -10,17 +10,17 @@
   href = "https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
-  <header>
-    <a href = "#" class="logo">
-      <img src="images/image1.jpeg" alt="">
+   <header class="header">
+       <a href = "#" class="logo">
+      <img src="images/agro.jpeg" alt="">
     </a>
     <!--nav icons-->
     <i class = 'bx bx-menu' id = "menu-icon"></i>
     <!--Links-->
     <ul class = "navbar">
     <li><a href = #home>Home</a></li>
-        <li><a href = #market>MarketPLace</a></li>
-            <li><a href = #about>About Us</a></li>
+    <li><a href = #about>About Us</a></li>
+        <li><a href = #market>MarketPLace</a></li>    
                 <li><a href = #services>Services</a></li>
     </ul>
     <div class="header-icon">
@@ -43,44 +43,263 @@
   </div>
 </section>
 <!--about us-->
-<section class="about" id = "about">
-  <div class="about-img">
-    <img src="images/about.jpeg" alt="">
+<section class="about-us" id = "about">
+  <div class="heading">
+    <h2 style="align-items: center;">The Curators</h2>
   </div>
-  <div class="about-text">
-    <h2>The Curators</h2>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ullam molestias omnis tenetur aliquid deleniti! Aspernatur ad sint eaque debitis, inventore ut eos ex a dicta, perspiciatis et praesentium placeat.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ut fugit sequi dignissimos dolor ab, doloribus iste laborum odio hic aliquam similique mollitia possimus facilis, asperiores eveniet. Aliquid, animi sunt?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe nihil, exercitationem similique deserunt officiis asperiores alias quas consequatur nemo minus quos veritatis illo magnam a sint quo iste consequuntur. Dolor.</p>
-    <a href="#" class="btn">Learn More</a>
+  
+
+  <!-- Coder 1 -->
+  <div class="profile">
+    <img src="images/mignot.jpeg" alt="Coder One" class="scroll-3d">
+    <div class="text">
+      <h2>Mignot Abraham</h2>
+      <p>
+        Coder One is a passionate software developer who works on backend systems
+        and database design. They focus on building reliable and scalable solutions.
+      </p>
+    </div>
+  </div>
+
+  <!-- Coder 2 -->
+  <div class="profile reverse">
+    <img src="images/mekdi.jpeg" alt="Coder Two" class="scroll-3d">
+    <div class="text">
+      <h2>MEkdelawit Hizkael</h2>
+      <p>
+        Coder Two specializes in frontend development and UI/UX design, ensuring
+        the application is user-friendly and visually appealing.
+      </p>
+    </div>
+  </div>
+  <div class="profile">
+    <img src="images/mignot.jpeg" alt="Coder One">
+    <div class="text">
+      <h2>Mubin Abdulsemed</h2>
+      <p>
+        Coder One is a passionate software developer who works on backend systems
+        and database design. They focus on building reliable and scalable solutions.
+      </p>
+    </div>
+  </div>
+
+</section>
  
   </div>
-
 </section>
-<section class="products" id="products">
+<!-- Marketplace Section -->
+<section class="marketplace" id="market">
   <div class="heading">
-    <h2>Our Popular Products</h2>
+    <h2>MARKETPLACE</h2>
+    <span>Browse Premium Agricultural Products</span>
+  </div>
+  <div class="market-container">
+    <!-- Product 1 -->
+    <div class="box">
+      <div class="box-img">
+        <img src="/AgroTrade/export.jpg" alt="Export and Local Markets">
+      </div>
+      <h3>Export & Local Markets</h3>
+      <p>High-quality products for both export and domestic markets. Certified and tested for quality assurance.</p>
+      <div class="price-box">
+        <span class="price">$300 / ton</span>
+        <div class="stars">
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star-half'></i>
+        </div>
+      </div>
+      <a href="#" class="btn">Contact Seller</a>
+    </div>
+    
+    <!-- Product 2 -->
+    <div class="box">
+      <div class="box-img">
+        <img src="/AgroTrade/teff.jpg"Iron Certified Farms">
+      </div>
+      <h3>Iron Certified Farms</h3>
+      <p>Products from iron-certified farms ensuring the highest quality standards and sustainable farming.</p>
+
+      <div class="price-box">
+        <span class="price">$350 / ton</span>
+        <div class="stars">
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bx-star'></i>
+        </div>
+      </div>
+      <a href="#" class="btn">Contact Seller</a>
+    </div>
+    
+    <!-- Product 3 -->
+    <div class="box">
+      <div class="box-img">
+        <img src="images/coffee2.jpg" alt="Coffee Beans">
+      </div>
+      <h3>Premium Coffee Beans</h3>
+      <p>High-quality coffee beans with certification. Perfect for export with rich aroma and flavor profile.</p>
+      <div class="price-box">
+        <span class="price">Market Price</span>
+        <div class="stars">
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+        </div>
+      </div>
+      <a href="#" class="btn">Contact Seller</a>
+    </div>
+    
+    <!-- Product 4 -->
+    <div class="box">
+      <div class="box-img">
+        <img src="images/sesame.jpg" alt="Sesame Seeds">
+      </div>
+      <h3>Export-Quality Sesame Seeds</h3>
+      <p>High oil content sesame seeds suitable for international markets. Premium quality with proper packaging.</p>
+      <div class="price-box">
+        <span class="price">$1,200 / ton</span>
+        <div class="stars">
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star'></i>
+          <i class='bx bxs-star-half'></i>
+        </div>
+      </div>
+      <a href="#" class="btn">Contact Seller</a>
+    </div>
   </div>
 </section>
 
+<!-- Services Section -->
+<section class="services" id="services">
+  <div class="heading">
+    <h2>OUR SERVICES</h2>
+    <span>How AgroTrade Helps You</span>
+  </div>
+  <div class="services-container">
+    <div class="s-box">
+      <img src="/AgroTrade/sell.jpg" alt="Sell on AgroTrade">
+      <h3>Sell on AgroTrade</h3>
+      <p>Are you a farmer or supplier? List your products here and reach buyers worldwide.</p>
+      <a href="#" class="btn">Register as Seller</a>
+    </div>
+    
+    <div class="s-box">
+      <img src="/AgroTrade/support.jpg" alt="Buyer Support">
+      <h3>Buyer Support</h3>
+      <p>Get assistance with product selection, quality verification, and shipping logistics.</p>
+      <a href="#" class="btn">Contact Support</a>
+    </div>
+    
+    <div class="s-box">
+      <img src="/AgroTrade/logistics.jpg" alt="Logistics">
+      <h3>Global Logistics</h3>
+      <p>We handle export documentation, shipping, and customs clearance for seamless transactions.</p>
+      <a href="#" class="btn">View Options</a>
+    </div>
+  </div>
+</section>
 
+<!-- Support Form Section -->
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <div class="contact-info " font-weight="bold">
+      <h2 >Get in Touch </h2>
+      <p>Have questions about our products or services? Our support team is here to help you 24/7.</p>
+      <div class="info-box">
+        <div class="info">
+          <i class='bx bxs-phone'></i>
+          <span>+1 (555) 123-4567</span>
+        </div>
+        <div class="info">
+          <i class='bx bxs-envelope'></i>
+          <span>support@agrotrade.com</span>
+        </div>
+        <div class="info">
+          <i class='bx bxs-map'></i>
+          <span>123 Farm Street, Agricultural City</span>
+        </div>
+      </div>
+      <div class="social" >
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-twitter'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+      </div>
+    </div>
+    
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <form action="">
+        <div class="input-box">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email Address" required>
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Product Inquiry" required>
+          <input type="text" placeholder="Phone Number">
+        </div>
+        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+        <input type="submit" value="Submit" class="btn">
+      </form>
+    </div>
+  </div>
+</section>
 
+<!-- Footer -->
+<section class="footer">
+  <div class="footer-box">
+    <h2>AgroTrade</h2>
+    <p>Connecting farmers and buyers worldwide through our trusted agricultural marketplace.</p>
+    <div class="social">
+      <a href="#"><i class='bx bxl-facebook'></i></a>
+      <a href="#"><i class='bx bxl-twitter'></i></a>
+      <a href="#"><i class='bx bxl-instagram'></i></a>
+      <a href="#"><i class='bx bxl-linkedin'></i></a>
+    </div>
+  </div>
+  
+  <div class="footer-box">
+    <h3>Quick Links</h3>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#market">Marketplace</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </div>
+  
+  <div class="footer-box">
+    <h3>Products</h3>
+    <li><a href="#">Grains</a></li>
+    <li><a href="#">Seeds</a></li>
+    <li><a href="#">Coffee</a></li>
+    <li><a href="#">Spices</a></li>
+    <li><a href="#">Certified Products</a></li>
+  </div>
+  
+  <div class="footer-box contact-info">
+    <h3>Contact</h3>
+    <span><i class='bx bxs-map'></i> 123 Farm Street, Agricultural City</span>
+    <span><i class='bx bxs-phone'></i> +1 (555) 123-4567</span>
+    <span><i class='bx bxs-envelope'></i> info@agrotrade.com</span>
+  </div>
+</section>
 
+<!-- Copyright -->
+<div class="copyright">
+  <p>&#169; 2026 AgroTrade. All Rights Reserved.</p>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script src="main.js"></script>
 </body>
-<script src = "main.js"></script>
 </html>
+
+
+
