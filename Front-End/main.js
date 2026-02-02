@@ -87,7 +87,7 @@ const cartTotalPrice = document.getElementById('cart-total-price');
 const cartCount = document.getElementById('cart-count');
 const checkoutBtn = document.getElementById('checkout-btn');
 
-// Seller overlay elements
+// Seller overlay elements - ADDED FROM SECOND CODE
 const sellerOverlay = document.getElementById('seller-overlay');
 const closeSeller = document.getElementById('close-seller');
 const sellerName = document.getElementById('seller-name');
@@ -100,6 +100,176 @@ const sellerCerts = document.getElementById('seller-certs');
 const sellerDescription = document.getElementById('seller-description-text');
 const sendMessageBtn = document.getElementById('send-message');
 const messageToSeller = document.getElementById('message-to-seller');
+
+// Extended Seller Data Configuration - ADDED FROM SECOND CODE
+const sellerData = {
+  'fertilizer': {
+    name: 'John AgriTech',
+    company: 'AgroSupplies Inc.',
+    location: 'Addis Ababa, Ethiopia',
+    phone: '+251 911 223 344',
+    email: 'fertilizer@agrosupplies.com',
+    products: 'Fertilizers, Soil Amendments',
+    certs: 'ISO 9001, Organic Certified',
+    description: 'Leading supplier of agricultural fertilizers and soil enhancement products with 10+ years of experience.',
+    rating: 4.7
+  },
+  'machinery': {
+    name: 'Michael FarmTech',
+    company: 'FarmTech Co.',
+    location: 'Nairobi, Kenya',
+    phone: '+251 922 334 455',
+    email: 'machinery@farmtech.com',
+    products: 'Tractors, Harvesters, Irrigation Systems',
+    certs: 'CE Certified, Quality Approved',
+    description: 'Supplier of modern agricultural machinery and equipment for large-scale farming operations.',
+    rating: 4.9
+  },
+  'pesticides': {
+    name: 'Sarah CropCare',
+    company: 'CropGuard Ltd.',
+    location: 'Kampala, Uganda',
+    phone: '+251 933 445 566',
+    email: 'pesticides@cropguard.com',
+    products: 'Pesticides, Herbicides, Fungicides',
+    certs: 'EPA Approved, Eco-Friendly',
+    description: 'Specialist in crop protection products with focus on environmentally friendly solutions.',
+    rating: 4.5
+  },
+  'livestock': {
+    name: 'David Livestock',
+    company: 'Livestock Hub',
+    location: 'Addis Ababa, Ethiopia',
+    phone: '+251 944 556 677',
+    email: 'livestock@agrotrade.com',
+    products: 'Cattle, Poultry, Animal Feed',
+    certs: 'Veterinary Approved, Quality Certified',
+    description: 'Premium livestock supplier with focus on animal health and quality breeding.',
+    rating: 4.8
+  },
+  'farm-protection': {
+    name: 'Robert Secure',
+    company: 'SecureFarm Inc.',
+    location: 'Dar es Salaam, Tanzania',
+    phone: '+251 955 667 788',
+    email: 'security@securefarm.com',
+    products: 'Fencing, Security Systems, Storage',
+    certs: 'Safety Certified, Durable Materials',
+    description: 'Provider of farm security solutions and protective equipment for agricultural operations.',
+    rating: 4.6
+  },
+  'post-harvest': {
+    name: 'Lisa Harvest',
+    company: 'Harvest Solutions',
+    location: 'Kigali, Rwanda',
+    phone: '+251 966 778 899',
+    email: 'harvest@solutions.com',
+    products: 'Storage Systems, Processing Equipment',
+    certs: 'Food Grade, Quality Assured',
+    description: 'Expert in post-harvest technology and storage solutions to reduce crop losses.',
+    rating: 4.7
+  },
+  'herbicides': {
+    name: 'Thomas WeedFree',
+    company: 'WeedFree Agro',
+    location: 'Addis Ababa, Ethiopia',
+    phone: '+251 977 889 900',
+    email: 'herbicides@weedfree.com',
+    products: 'Selective Herbicides, Weed Control',
+    certs: 'Selective Action, Safe for Crops',
+    description: 'Specialist in weed management with selective herbicides that protect your crops.',
+    rating: 4.4
+  },
+  'seed-seedlings': {
+    name: 'Maria SeedMaster',
+    company: 'SeedMaster Co.',
+    location: 'Nairobi, Kenya',
+    phone: '+251 988 990 011',
+    email: 'seeds@seedmaster.com',
+    products: 'Hybrid Seeds, Seedlings, Planting Materials',
+    certs: 'Certified Seeds, High Germination Rate',
+    description: 'Provider of high-quality certified seeds and seedlings for various crops.',
+    rating: 4.9
+  },
+  'export-local': {
+    name: 'James GlobalTrade',
+    company: 'Global Export Co.',
+    location: 'Addis Ababa, Ethiopia',
+    phone: '+251 911 111 222',
+    email: 'export@globaltrade.com',
+    products: 'Teff, Coffee, Sesame, Spices',
+    certs: 'Export Certified, Quality Graded',
+    description: 'International exporter of premium Ethiopian agricultural products to global markets.',
+    rating: 4.8
+  },
+  'iron-certified': {
+    name: 'Anna Premium',
+    company: 'Premium Farms Ltd.',
+    location: 'Hawassa, Ethiopia',
+    phone: '+251 922 222 333',
+    email: 'certified@premiumfarms.com',
+    products: 'Organic Produce, Certified Crops',
+    certs: 'Iron Certified, Organic, Fair Trade',
+    description: 'Certified organic farm specializing in premium quality agricultural products.',
+    rating: 4.9
+  },
+  'coffee-beans': {
+    name: 'Carlos Coffee',
+    company: 'Coffee Masters Inc.',
+    location: 'Jimma, Ethiopia',
+    phone: '+251 933 333 444',
+    email: 'coffee@masters.com',
+    products: 'Arabica Coffee, Specialty Beans',
+    certs: 'Specialty Grade, Direct Trade',
+    description: 'Specialist in premium Ethiopian coffee beans with direct trade relationships.',
+    rating: 5.0
+  },
+  'sesame-seeds': {
+    name: 'Fatima Sesame',
+    company: 'Sesame Exporters',
+    location: 'Gondar, Ethiopia',
+    phone: '+251 944 444 555',
+    email: 'sesame@exporters.com',
+    products: 'White Sesame, Hulled Sesame',
+    certs: 'Export Quality, High Oil Content',
+    description: 'Leading exporter of premium sesame seeds with high oil content for international markets.',
+    rating: 4.7
+  },
+  // Services Section Sellers
+  'seller-registration': {
+    name: 'AgroTrade Team',
+    company: 'AgroTrade Sales',
+    location: 'Addis Ababa, Ethiopia',
+    phone: '+251 955 555 666',
+    email: 'sales@agrotrade.com',
+    products: 'Marketplace Services, Seller Registration',
+    certs: 'Platform Verified, Secure Registration',
+    description: 'Official AgroTrade team helping farmers and suppliers register and sell on our platform. We provide step-by-step guidance for seller registration, product listing, and market access. Our team verifies all sellers to ensure quality and reliability.',
+    rating: 4.8
+  },
+  'buyer-support': {
+    name: 'Support Team',
+    company: 'AgroTrade Support',
+    location: 'Addis Ababa, Ethiopia',
+    phone: '+251 966 666 777',
+    email: 'support@agrotrade.com',
+    products: 'Buyer Assistance, Technical Support',
+    certs: '24/7 Support, Certified Assistance',
+    description: 'Dedicated support team to assist buyers with product selection, quality verification, and transactions. We provide multilingual support, help with order tracking, and resolve any issues you may encounter while using our platform.',
+    rating: 4.9
+  },
+  'global-logistics': {
+    name: 'Logistics Team',
+    company: 'AgroTrade Logistics',
+    location: 'Addis Ababa, Ethiopia',
+    phone: '+251 977 777 888',
+    email: 'logistics@agrotrade.com',
+    products: 'Shipping, Customs Clearance, Logistics',
+    certs: 'Certified Logistics, Global Network',
+    description: 'Professional logistics team handling international shipping, customs clearance, and supply chain management. We have partnerships with major shipping companies and provide door-to-door delivery services with real-time tracking.',
+    rating: 4.7
+  }
+};
 
 // Initialize cart from shared cart.js
 function initPage() {
@@ -130,16 +300,29 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Seller overlay functionality
-document.querySelectorAll('.contact-seller').forEach(button => {
-  button.addEventListener('click', (e) => {
+// Seller overlay functionality - UPDATED WITH EXTENDED FUNCTIONALITY
+document.querySelectorAll('.contact-seller, .service-contact-btn').forEach(button => {
+  button.addEventListener('click', function (e) {
     e.preventDefault();
-    const sellerId = button.dataset.seller;
-    showSellerOverlay(sellerId);
+    
+    // Check if it's from marketplace (using seller ID) or services (using service type)
+    if (button.dataset.seller) {
+      // Marketplace seller (from original code)
+      const sellerId = button.dataset.seller;
+      showSellerOverlayFromMarketplace(sellerId);
+    } else if (button.dataset.product) {
+      // Product seller (from second code)
+      const productType = button.getAttribute('data-product').toLowerCase().replace(/\s+/g, '-');
+      showSellerOverlayFromProduct(productType);
+    } else if (button.dataset.service) {
+      // Services section button
+      const serviceType = button.getAttribute('data-service').toLowerCase().replace(/\s+/g, '-');
+      showSellerOverlayFromProduct(serviceType);
+    }
   });
 });
 
-function showSellerOverlay(sellerId) {
+function showSellerOverlayFromMarketplace(sellerId) {
   const seller = sellers[sellerId];
   
   if (seller) {
@@ -177,39 +360,102 @@ function showSellerOverlay(sellerId) {
     ratingContainer.appendChild(ratingText);
     
     sellerOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
   }
 }
 
+function showSellerOverlayFromProduct(productType) {
+  const seller = sellerData[productType];
+  
+  if (!seller) {
+    console.warn(`No seller data found for product type: ${productType}`);
+    return;
+  }
+
+  // Update all seller information
+  sellerName.textContent = seller.name;
+  sellerCompany.textContent = seller.company;
+  sellerLocation.textContent = seller.location;
+  sellerPhone.textContent = seller.phone;
+  sellerEmail.textContent = seller.email;
+  sellerProducts.textContent = seller.products;
+  sellerCerts.textContent = seller.certs;
+  sellerDescription.textContent = seller.description;
+
+  // Update rating stars
+  const stars = document.querySelectorAll('.seller-rating i');
+  const ratingText = document.querySelector('.rating-text');
+  
+  const fullStars = Math.floor(seller.rating);
+  const hasHalfStar = seller.rating % 1 >= 0.5;
+  
+  stars.forEach((star, index) => {
+    if (index < fullStars) {
+      star.className = 'bx bxs-star';
+    } else if (index === fullStars && hasHalfStar) {
+      star.className = 'bx bxs-star-half';
+    } else {
+      star.className = 'bx bx-star';
+    }
+  });
+  
+  // Generate random review count for services
+  const reviewCount = Math.floor(Math.random() * 100) + 50;
+  ratingText.textContent = `${seller.rating} (${reviewCount} reviews)`;
+  
+  sellerOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
 // Close seller overlay
-closeSeller.addEventListener('click', () => {
-  sellerOverlay.classList.remove('active');
-});
+if (closeSeller) {
+  closeSeller.addEventListener('click', () => {
+    sellerOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  });
+}
 
 // Close seller overlay when clicking outside
-sellerOverlay.addEventListener('click', (e) => {
-  if (e.target === sellerOverlay) {
-    sellerOverlay.classList.remove('active');
-  }
-});
+if (sellerOverlay) {
+  sellerOverlay.addEventListener('click', (e) => {
+    if (e.target === sellerOverlay) {
+      sellerOverlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+}
 
 // Close seller overlay with ESC key
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
+  if (e.key === 'Escape' && sellerOverlay.classList.contains('active')) {
     sellerOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
   }
 });
 
-// Send message functionality
-sendMessageBtn.addEventListener('click', () => {
-  const message = messageToSeller.value.trim();
-  if (message) {
-    alert(`Message sent to ${sellerName.textContent}! They will contact you soon.`);
+// Send message functionality - UPDATED
+if (sendMessageBtn) {
+  sendMessageBtn.addEventListener('click', () => {
+    const message = messageToSeller.value.trim();
+    
+    if (!message) {
+      alert('Please enter a message before sending.');
+      return;
+    }
+    
+    const sellerEmail = document.getElementById('seller-email').textContent;
+    const sellerName = document.getElementById('seller-name').textContent;
+    
+    alert(`Message sent to ${sellerName}!\n\nWe've forwarded your message to ${sellerEmail}. The seller will contact you shortly.`);
+    
+    // Clear the message field
     messageToSeller.value = '';
+    
+    // Close overlay after sending
     sellerOverlay.classList.remove('active');
-  } else {
-    alert('Please enter a message before sending.');
-  }
-});
+    document.body.style.overflow = 'auto';
+  });
+}
 
 // Add to cart functionality
 document.addEventListener('DOMContentLoaded', () => {
@@ -240,6 +486,33 @@ document.addEventListener('DOMContentLoaded', () => {
       updateCartDisplay();
     });
   });
+  
+  // Add event listeners to Services section buttons AFTER DOM loads
+  setTimeout(() => {
+    document.querySelectorAll('.s-box .btn').forEach(button => {
+      // Add data-service attribute based on button text
+      const buttonText = button.textContent.toLowerCase();
+      if (buttonText.includes('register')) {
+        button.setAttribute('data-service', 'seller-registration');
+        button.classList.add('service-contact-btn');
+      } else if (buttonText.includes('contact')) {
+        button.setAttribute('data-service', 'buyer-support');
+        button.classList.add('service-contact-btn');
+      } else if (buttonText.includes('view') || buttonText.includes('logistics')) {
+        button.setAttribute('data-service', 'global-logistics');
+        button.classList.add('service-contact-btn');
+      }
+      
+      // Add event listener if it's a service button
+      if (button.hasAttribute('data-service')) {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const serviceType = this.getAttribute('data-service');
+          showSellerOverlayFromProduct(serviceType);
+        });
+      }
+    });
+  }, 500);
 });
 
 // Update cart display
@@ -426,6 +699,7 @@ function showToast(message) {
     }, 300);
   }, 3000);
 }
+
 // Scroll animation for About Us section with water drop effect
 function initScrollAnimations() {
   const profileElements = document.querySelectorAll('.profile');
@@ -565,6 +839,11 @@ toastStyles.textContent = `
   .toast.show {
     opacity: 1;
     transform: translateY(0);
+  }
+  
+  /* Additional style for service buttons */
+  .service-contact-btn {
+    cursor: pointer;
   }
 `;
 document.head.appendChild(toastStyles);

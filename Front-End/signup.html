@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - AgroTrade</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="logs.css">
+        <link rel="icon" type="image/jpeg" href="images/armah.jpeg">
 </head>
-<body>
+<body style="
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('images/login.JPG') center / cover no-repeat;
+">
 
 <section class="login-section">
     <form class="login-form" action="register.php" method="POST">
+        <div class="avatar">
+         <img src="images/armah.jpeg" alt="">
+        </div>
         <h2>Create Account</h2>
 
         <div class="input-box">
@@ -31,7 +40,7 @@
         <button type="submit" class="login-btn">Sign Up</button>
 
         <p>
-            Already have an account?
+            Already have an account?<br>
             <a href="login.html" >Login</a>
         </p>
 

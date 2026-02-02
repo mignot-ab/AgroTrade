@@ -1,29 +1,29 @@
 // Products data
 const productsData = [
-  { id: 1, name: "Fertilizer", price: 20, category: "agriculture", image:"/images/fertilizer.jpeg" },
-  { id: 2, name: "Machinery", price: 20000, category: "equipment", image: "/images/machinery.jpeg" },
-  { id: 3, name: "Pesticides", price: 25, category: "agriculture", image: "/images/pesticides.jpeg" },
-  { id: 4, name: "Livestock Products", price: 18.99, category: "livestock", image: "/images/cattle.jpeg" },
-  { id: 5, name: "Herbicides", price: 14.99, category: "agriculture", image: "/images/herbicides.jpeg" },
-  { id: 6, name: "Seed and Seedlings", price: 10, category: "seeds", image: "/images/seed.jpeg" },
-  { id: 7, name: "Farm Protection", price: 52, category: "safety", image: "/images/fence.jpeg" },
-  { id: 8, name: "Harvest Products", price: 34, category: "storage", image: "/images/harvest.jpeg" },
-  { id: 9, name: "Export Products", price: 300, category: "agriculture", image: "/images/export.jpg" },
-  { id: 10, name: "Teff Products", price: 350, category: "seeds", image: "/images/teff.jpg" },
-  { id: 11, name: "Coffee Beans", price: 400, category: "agriculture", image: "/images/coffee2.jpg" },
-  { id: 12, name: "Sesame Seeds", price: 1200, category: "seeds", image: "/images/sesame.jpg" },
-  { id: 13, name: "Organic Fertilizer", price: 28, category: "agriculture", image: "/images/fertilizer.jpeg" },
-  { id: 14, name: "Tractor", price: 45000, category: "equipment", image: "/images/machinery.jpeg" },
-  { id: 15, name: "Organic Pesticides", price: 32, category: "agriculture", image: "/images/pesticides.jpeg" },
-  { id: 16, name: "Dairy Products", price: 22.50, category:"livestock", image:"/images/cattle.jpeg" },
-  { id: 17, name: "Safety Gear", price: 45, category: "safety", image: "/images/fence.jpeg" },
-  { id: 18, name: "Grain Storage", price: 120, category: "storage", image: "/images/harvest.jpeg" },
-  { id: 19, name: "Wheat Seeds", price: 15, category: "seeds", image: "/images/seed.jpeg" },
-  { id: 20, name: "Corn Seeds", price: 12, category: "seeds", image: "/images/seed.jpeg" },
-  { id: 21, name: "Irrigation System", price: 1200, category: "equipment", image: "/images/machinery.jpeg" },
-  { id: 22, name: "Poultry Equipment", price: 180, category: "livestock", image: "/images/cattle.jpeg" },
-  { id: 23, name: "Greenhouse Materials", price: 850, category: "equipment", image: "/images/fence.jpeg" },
-  { id: 24, name: "Soil Testing Kit", price: 89, category:"agriculture", image:"/images/fertilizer.jpeg" }  
+  { id: 1, name: "Kuyu / Quncho Teff Seed", price: 20, category: "agriculture", image: "images/fertilizer.jpeg" },
+  { id: 2, name: "Urea (Nitrogen)", price: 20000, category: "equipment", image: "images/machinery.jpeg" },
+  { id: 3, name: "PesNPS+Zn/B (Soil-Specific Blend)ticides", price: 25, category: "agriculture", image: "images/pesticides.jpeg" },
+  { id: 4, name: "Organic Vermicompost (locally produced)", price: 18.99, category: "livestock", image: "images/cattle.jpeg" },
+  { id: 5, name: "Massey Ferguson 200 Series Tractor", price: 14.99, category: "agriculture", image: "images/herbicides.jpeg" },
+  { id: 6, name: "Multi-crop Thresher (used for Teff/Wheat)", price: 10, category: "seeds", image: "images/seed.jpeg" },
+  { id: 7, name: "Walk-behind Power Tiller", price: 52, category: "safety", image: "images/fence.jpeg" },
+  { id: 8, name: "Mancozeb (Fungicide)", price: 34, category: "storage", image: "images/harvest.jpeg" },
+  { id: 9, name: "Malathion (Insecticide)", price: 300, category: "agriculture", image: "images/export.jpg" },
+  { id: 10, name: "Bio-pesticides", price: 350, category: "seeds", image: "images/teff.jpg" },
+  { id: 11, name: "Borena Bull Semen/Breed", price: 400, category: "agriculture", image: "images/coffee2.jpg" },
+  { id: 12, name: "Ethio-Chicken Layer Feed", price: 1200, category: "seeds", image: "images/sesame.jpg" },
+  { id: 13, name: "Veterinary Deworming Kits", price: 28, category: "agriculture", image: "images/fertilizer.jpeg" },
+  { id: 14, name: "Heavy-Duty Rubber Farming Boots", price: 45000, category: "equipment", image: "images/machinery.jpeg" },
+  { id: 15, name: "Canvas Spraying Suits", price: 32, category: "agriculture", image: "images/pesticides.jpeg" },
+  { id: 16, name: "UV-Protected Shading Nets", price: 22.50, category:"livestock", image:"images/cattle.jpeg" },
+  { id: 17, name: "PICS Bags (Hermetic)", price: 45, category: "safety", image: "images/fence.jpeg" },
+  { id: 18, name: "Traditional *Gotera*", price: 120, category: "storage", image: "images/harvest.jpeg" },
+  { id: 19, name: "Solar Grain Moisture Meters", price: 15, category: "seeds", image: "images/seed.jpeg" },
+  { id: 20, name: "2,4-D Selective Herbicide", price: 12, category: "seeds", image: "images/seed.jpeg" },
+  { id: 21, name: "Glyphosate (for land clearing)", price: 1200, category: "equipment", image: "images/machinery.jpeg" },
+  { id: 22, name: "Grass-specific herbicides", price: 180, category: "livestock", image: "images/cattle.jpeg" },
+  { id: 23, name: "Yirgacheffe Arabica Coffee Seedlings", price: 850, category: "equipment", image: "images/fence.jpeg" },
+  { id: 24, name: "Improved Red Onion Seeds", price: 89, category:"agriculture", image:"images/fertilizer.jpeg" }  
 ];
 
 // DOM Elements
@@ -43,6 +43,11 @@ const closeCart = document.getElementById('close-cart');
 const checkoutBtn = document.getElementById('checkout-btn');
 const searchIcon = document.getElementById('search-icon');
 
+// Header shadow on scroll
+let header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('shadow', window.scrollY > 0);
+});
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
   initCart(); // From cart.js
@@ -435,7 +440,6 @@ function showToast(message) {
   toast.textContent = message;
   document.body.appendChild(toast);
   
-
   setTimeout(() => {
     toast.classList.add('show');
   }, 10);

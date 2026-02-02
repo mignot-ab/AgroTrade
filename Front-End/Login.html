@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - AgroTrade</title>
     <link rel="stylesheet" href="logs.css">
+    <link rel="icon" type="image/jpeg" href="images/armah.jpeg">
 </head>
-<body>
+<body style="
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('images/login.JPG') center / cover no-repeat;
+">
 
 <section class="login-section">
     <!-- IMPORTANT: action + method added -->
+    
     <form class="login-form" action="login.php" method="POST">
+        <div class="avatar">
+         <img src="images/armah.jpeg" alt="">
+        </div>
+        
         <h2>Login to AgroTrade</h2>
 
         <div class="input-box">

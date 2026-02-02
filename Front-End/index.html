@@ -1,424 +1,598 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgroTrade Website</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-</head>
-<body>
-  <header class="header">
-    <a href="#" class="logo">
-      <img src="images/agro.jpeg" alt="AgroTrade Logo">
-    </a>
-    
-    <!--nav icons-->
-    <i class='bx bx-menu' id="menu-icon"></i>
-    
-    <!--Links-->
-    <ul class="navbar">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#marketplace">Marketplace</a></li>
-      <li><a href="#services">Services</a></li>
-    </ul>
-    
-    <div class="header-icon">
-      <div class="cart-info">
-        <i class='bx bx-cart-alt' id="cart-icon"></i>
-        <span id="cart-count" class="cart-count">0</span>
-      </div>
-      <i class='bx bx-search' id="search-icon"></i>
-    <i class="bx bx-user-circle" id = "login-btn"  onclick="goToLogin()"></i>
-    </div>
-    
-    <!--search box-->
-    <div class="search-box">
-      <input type="search" id="search-input" placeholder="Search Here.....">
-      <div class="search-results" id="search-results"></div>
-    </div>
-  </header>
-  
-  <!-- Seller Contact Overlay -->
-  <div id="seller-overlay" class="seller-overlay">
-    <div class="seller-modal">
-      <button id="close-seller" class="close-btn">&times;</button>
-      <div class="seller-content">
-        <img src="images/seller-profile.jpg" alt="Seller Profile" class="seller-profile-img">
-        <h2 id="seller-name">Seller Name</h2>
-        <div class="seller-rating">
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star-half'></i>
-          <span class="rating-text">4.5 (120 reviews)</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgroTrade Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="icon" type="image/jpeg" href="images/armah.jpeg">
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="images/agro.jpeg" alt="AgroTrade Logo" />
+      </a>
+
+      <!--nav icons-->
+      <i class="bx bx-menu" id="menu-icon"></i>
+
+      <!--Links-->
+      <ul class="navbar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#marketplace">Marketplace</a></li>
+        <li><a href="#services">Services</a></li>
+      </ul>
+
+      <div class="header-icon">
+        <div class="cart-info">
+          <i class="bx bx-cart-alt" id="cart-icon"></i>
+          <span id="cart-count" class="cart-count">0</span>
         </div>
-        
-        <div class="seller-info">
-          <div class="info-item">
-            <i class='bx bxs-user'></i>
-            <span><strong>Company:</strong> <span id="seller-company">Green Farms Ltd.</span></span>
+        <i class="bx bx-search" id="search-icon"></i>
+        <i class="bx bx-user-circle" id="login-btn" onclick="goToLogin()"></i>
+      </div>
+
+      <!--search box-->
+      <div class="search-box">
+        <input type="search" id="search-input" placeholder="Search Here....." />
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </header>
+
+    <!-- Seller Contact Overlay -->
+    <div id="seller-overlay" class="seller-overlay">
+      <div class="seller-modal">
+        <button id="close-seller" class="close-btn">&times;</button>
+        <div class="seller-content">
+          <img
+            src="images/armah.jpeg"
+            alt="Seller Profile"
+            class="seller-profile-img"
+          />
+          <h2 id="seller-name">Seller Name</h2>
+          <div class="seller-rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+            <span class="rating-text">4.5 (120 reviews)</span>
           </div>
-          <div class="info-item">
-            <i class='bx bxs-location-plus'></i>
-            <span><strong>Location:</strong> <span id="seller-location">Addis Ababa, Ethiopia</span></span>
+
+          <div class="seller-info">
+            
+            <div class="info-item">
+              <i class="bx bxs-user"></i>
+              <span
+                ><strong>Company:</strong>
+                <span id="seller-company">Green Farms Ltd.</span></span
+              >
+              
+            </div>
+            <div class="info-item">
+              <i class="bx bxs-location-plus"></i>
+              <span
+                ><strong>Location:</strong>
+                <span id="seller-location">Addis Ababa, Ethiopia</span></span
+              >
+            </div>
+            <div class="info-item">
+              <i class="bx bxs-phone"></i>
+              <span
+                ><strong>Phone:</strong>
+                <span id="seller-phone">+251 911 234 567</span></span
+              >
+            </div>
+            <div class="info-item">
+              <i class="bx bxs-envelope"></i>
+              <span
+                ><strong>Email:</strong>
+                <span id="seller-email">seller@greenfarms.com</span></span
+              >
+            </div>
+            <div class="info-item">
+              <i class="bx bxs-business"></i>
+              <span
+                ><strong>Products:</strong>
+                <span id="seller-products">Teff, Coffee, Sesame</span></span
+              >
+            </div>
+            <div class="info-item">
+              <i class="bx bxs-certification"></i>
+              <span
+                ><strong>Certifications:</strong>
+                <span id="seller-certs">Organic, ISO 9001</span></span
+              >
+            </div>
           </div>
-          <div class="info-item">
-            <i class='bx bxs-phone'></i>
-            <span><strong>Phone:</strong> <span id="seller-phone">+251 911 234 567</span></span>
+
+          <div class="seller-description">
+            <h3>About the Seller</h3>
+            <p id="seller-description-text">
+              This is a certified organic farm with over 15 years of experience
+              in agricultural exports. We specialize in high-quality teff,
+              coffee, and sesame seeds for international markets.
+            </p>
           </div>
-          <div class="info-item">
-            <i class='bx bxs-envelope'></i>
-            <span><strong>Email:</strong> <span id="seller-email">seller@greenfarms.com</span></span>
-          </div>
-          <div class="info-item">
-            <i class='bx bxs-business'></i>
-            <span><strong>Products:</strong> <span id="seller-products">Teff, Coffee, Sesame</span></span>
-          </div>
-          <div class="info-item">
-            <i class='bx bxs-certification'></i>
-            <span><strong>Certifications:</strong> <span id="seller-certs">Organic, ISO 9001</span></span>
-          </div>
-        </div>
-        
-        <div class="seller-description">
-          <h3>About the Seller</h3>
-          <p id="seller-description-text">This is a certified organic farm with over 15 years of experience in agricultural exports. We specialize in high-quality teff, coffee, and sesame seeds for international markets.</p>
-        </div>
-        
-        <div class="seller-contact-form">
-          <h3>Send Message</h3>
-          <textarea id="message-to-seller" placeholder="Type your message here..." rows="4"></textarea>
-          <button id="send-message" class="btn">Send Message</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <section class="home" id="home">
-    <div class="home-text">
-      <h1>Industry <br>meets Agriculture</h1><br><br>
-      <a href="#products" class="btn">Shop Now</a>
-    </div>
-    <div class="home-img">
-      <img src="images/backg2.jpeg" alt="Agriculture Background" class="scroll-3d">
-    </div>
-  </section>
-  
-  <!--about us-->
-<section class="about-us" id="about">
-  <div class="heading">
-    <h2>The Curators</h2>
-  </div>
-  
-  <!-- Coder 1 -->
-  <div class="profile fade-up" data-delay="0">
-    <img src="images/mignot.jpeg" alt="Mignot Abraham" class="scroll-3d">
-    <div class="text">
-      <h2>Mignot Abraham</h2>
-      <p>
-        Backend developer specializing in database design and scalable solutions.
-      </p>
-    </div>
-  </div>
-  
-  <!-- Coder 2 -->
-  <div class="profile reverse fade-up" data-delay="200">
-    <img src="images/mekdi.jpeg" alt="Mekdelawit Hizkael" class="scroll-3d">
-    <div class="text">
-      <h2>Mekdelawit Hizkael</h2>
-      <p>
-        Frontend developer focused on UI/UX design and user-friendly interfaces.
-      </p>
-    </div>
-  </div>
-  
-  <!-- Coder 3 -->
-  <div class="profile fade-up" data-delay="400">
-    <img src="images/mubin.jpeg" alt="Mubin Abdulsemed" class="scroll-3d">
-    <div class="text">
-      <h2>Mubin Abdulsemed</h2>
-      <p>
-        Full-stack developer with expertise in system architecture and integration.
-      </p>
-    </div>
-  </div>
-</section>
-  
-  <!--Products Section-->
-  <section class="products" id="products">
-    <div class="heading">
-      <h2>Our Popular Products</h2>
-    </div>
-    
-    <!--Container-->
-    <div class="products-container">
-      <div class="box product" data-id="1" data-name="Fertilizer" data-price="20" data-category="agriculture">
-        <img src="images/fertilizer.jpeg" alt="Fertilizer">
-        <h3>Fertilizer</h3>
-        <div class="content">
-          <span>Birr 250</span>
-          <a href="#" class="btn add-to-cart">Add to Cart</a>
-        </div>
-      </div>
-      
-      <div class="box product" data-id="2" data-name="Machinery" data-price="20000" data-category="equipment">
-        <img src="images/machinery.jpeg" alt="Machinery">
-        <h3>Machinery</h3>
-        <div class="content">
-          <span>Birr 1,000,000</span>
-          <a href="#" class="btn add-to-cart">Add to Cart</a>
-        </div>
-      </div>
-      
-      <div class="box product" data-id="3" data-name="Pesticides" data-price="25" data-category="agriculture">
-        <img src="images/pesticides.jpeg" alt="Pesticides">
-        <h3>Pesticides</h3>
-        <div class="content">
-          <span>Birr 2500</span>
-          <a href="#" class="btn add-to-cart">Add to Cart</a>
-        </div>
-      </div>
-      
-      <div class="box product" data-id="4" data-name="Livestock Products" data-price="18.99" data-category="livestock">
-        <img src="images/cattle.jpeg" alt="Livestock Products">
-        <h3>Livestock Products</h3>
-        <div class="content">
-          <span>Birr 18,000.99</span>
-          <a href="#" class="btn add-to-cart">Add to Cart</a>
-        </div>
-      </div>
-      
-      <div class="box product" data-id="5" data-name="Farm Protection and Safety Products" data-price="52" data-category="safety">
-        <img src="images/fence.jpeg" alt="Farm Protection">
-        <h3>Farm Protection and Safety Products</h3>
-        <div class="content">
-          <span>Birr 520,000</span>
-          <a href="#" class="btn add-to-cart">Add to Cart</a>
-        </div>
-      </div>
-      
-      <div class="box product" data-id="6" data-name="Post Harvest and Storage Products" data-price="34" data-category="storage">
-        <img src="images/harvest.jpeg" alt="Post Harvest Products">
-        <h3>Post Harvest and Storage Products</h3>
-        <div class="content">
-          <span>Birr 340,000</span>
-          <a href="#" class="btn add-to-cart">Add to Cart</a>
-        </div>
-      </div>
-      
-      <div class="box product" data-id="7" data-name="Herbicides" data-price="14.99" data-category="agriculture">
-        <img src="images/herbicides.jpeg" alt="Herbicides">
-        <h3>Herbicides</h3>
-        <div class="content">
-          <span>Birr 1400.99</span>
-          <a href="#" class="btn add-to-cart">Add to Cart</a>
-        </div>
-      </div>
-      
-      <div class="box product" data-id="8" data-name="Seed and Seedlings" data-price="10" data-category="seeds">
-        <img src="images/seed.jpeg" alt="Seed and Seedlings">
-        <h3>Seed and Seedlings</h3>
-        <div class="content">
-          <span>Birr 1000</span>
-          <a href="#" class="btn add-to-cart">Add to Cart</a>
-        </div>
-      </div>
-    </div>
-    
-    <button class="button">
-      <a href="products.html"><h2>See More</h2></a>
-    </button>
-  </section>
-  
-  <!-- Marketplace Section -->
-  <section class="marketplace" id="marketplace">
-    <div class="heading">
-      <h2>Browse Premium Farmer Products Directly From The Farm</h2>
-    </div>
-    
-    <div class="market-container">
-      <!-- Product 1 -->
-      <div class="box market-item" data-id="9" data-name="Export & Local Markets" data-price="300" data-seller="1">
-        <div class="box-img">
-          <img src="images/export.jpg" alt="Export and Local Markets">
-        </div>
-        <h3>Export & Local Markets</h3>
-        <p>High-quality products for both export and domestic markets. Certified and tested for quality assurance.</p>
-        <div class="price-box">
-          <span class="price">Birr300 / ton</span>
-          <div class="stars">
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star-half'></i>
+
+          <div class="seller-contact-form">
+            <h3>Send Message</h3>
+            <textarea
+              id="message-to-seller"
+              placeholder="Type your message here..."
+              rows="4"
+            ></textarea>
+            <button id="send-message" class="btn">Send Message</button>
           </div>
         </div>
-        <a href="#" class="btn contact-seller" data-seller="1">Contact Seller</a>
       </div>
-      
-      <!-- Product 2 -->
-      <div class="box market-item" data-id="10" data-name="Iron Certified Farms" data-price="350" data-seller="2">
-        <div class="box-img">
-          <img src="images/teff.jpg" alt="Iron Certified Farms">
+    </div>
+
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>Industry <br />meets Agriculture</h1>
+        <br /><br />
+        <a href="#products" class="btn">Shop Now</a>
+      </div>
+      <div class="home-img">
+        <img
+          src="images/backg2.jpeg"
+          alt="Agriculture Background"
+          class="scroll-3d"
+        />
+      </div>
+    </section>
+
+    <!--about us-->
+    <section class="about-us" id="about">
+      <div class="heading">
+        <h2>The Curators</h2>
+      </div>
+
+      <!-- Coder 1 -->
+      <div class="profile fade-up" data-delay="0">
+        <img src="images/mignot.jpeg" alt="Mignot Abraham" class="scroll-3d" />
+        <div class="text">
+          <h2>Mignot Abraham</h2>
+          <h3>Agricultural UI/UX Design Specialist</h3>
+          <p>
+            
+            Mignot Abraham is an agricultural UI/UX design specialist focused on creating intuitive and farmer-centered digital experiences. She designs user interfaces that simplify complex agricultural processes, making digital tools more accessible to farmers, traders, and agricultural stakeholders. Her work emphasizes usability, clarity, and visual consistency to improve technology adoption in the agricultural sector.
+          </p>
         </div>
-        <h3>Iron Certified Farms</h3>
-        <p>Products from iron-certified farms ensuring the highest quality standards and sustainable farming.</p>
-        <div class="price-box">
-          <span class="price">Birr350 / ton</span>
-          <div class="stars">
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bx-star'></i>
+      </div>
+
+      <!-- Coder 2 -->
+      <div class="profile reverse fade-up" data-delay="200">
+        <img
+          src="images/mekdi.jpeg"
+          alt="Mekdelawit Hizkael"
+          class="scroll-3d"
+        />
+        <div class="text">
+          <h2>Mekdelawit Hizkael</h2>
+          <h3>Agricultural Technology & Frontend Specialist</h3>
+          <p>
+            
+           Mekdelawit Hizkael is an agricultural technology expert with a strong focus on frontend development and user-friendly system design. She specializes in building responsive, visually engaging interfaces that support agricultural workflows and data visualization. Her goal is to enhance user interaction and efficiency through clean design and practical functionality.
+          </p>
+        </div>
+      </div>
+
+      <!-- Coder 3 -->
+      <div class="profile fade-up" data-delay="400">
+        <img src="images/mubin.jpeg" alt="Mubin Abdulsemed" class="scroll-3d" />
+        <div class="text">
+          <h2>Mubin Abdulsemed</h2>
+          <h3> Agricultural Systems & Integration Specialist</h3>
+          <p>
+           
+
+Mubin Abdulsemed is an agricultural systems specialist with expertise in system architecture and application integration. He focuses on connecting databases, backend services, and user interfaces into cohesive agricultural platforms. His work supports scalable digital solutions that improve agricultural management, trade operations, and system reliability.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--Products Section-->
+    <section class="products" id="products">
+      <div class="heading">
+        <h2>Our Popular Products</h2>
+      </div>
+
+      <!--Container-->
+      <div class="products-container">
+        <div
+          class="box product"
+          data-id="1"
+          data-name="Fertilizer"
+          data-price="20"
+          data-category="agriculture"
+        >
+          <img src="images/fertilizer.jpeg" alt="Fertilizer" />
+          <h3>NPS+Zn/B (Soil-Specific Blend)</h3>
+          <div class="content">
+            <span>Birr 250</span>
+            <a href="#" class="btn add-to-cart">Add to Cart</a>
           </div>
         </div>
-        <a href="#" class="btn contact-seller" data-seller="2">Contact Seller</a>
-      </div>
-      
-      <!-- Product 3 -->
-      <div class="box market-item" data-id="11" data-name="Premium Coffee Beans" data-price="400" data-seller="3">
-        <div class="box-img">
-          <img src="images/coffee2.jpg" alt="Coffee Beans">
-        </div>
-        <h3>Premium Coffee Beans</h3>
-        <p>High-quality coffee beans with certification. Perfect for export with rich aroma and flavor profile.</p>
-        <div class="price-box">
-          <span class="price">Birr400/ton</span>
-          <div class="stars">
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
+
+        <div
+          class="box product"
+          data-id="2"
+          data-name="Machinery"
+          data-price="20000"
+          data-category="equipment"
+        >
+          <img src="images/machinery.jpeg" alt="Machinery" />
+          <h3>Massey Ferguson 200 Series Tractorh</h3>
+          <div class="content">
+            <span>Birr 1,000,000</span>
+            <a href="#" class="btn add-to-cart">Add to Cart</a>
           </div>
         </div>
-        <a href="#" class="btn contact-seller" data-seller="3">Contact Seller</a>
-      </div>
-      
-      <!-- Product 4 -->
-      <div class="box market-item" data-id="12" data-name="Export-Quality Seeds" data-price="1200" data-seller="4">
-        <div class="box-img">
-          <img src="images/sesame.jpg" alt="Sesame Seeds">
-        </div>
-        <h3>Export-Quality Seeds</h3>
-        <p>High oil content seeds suitable for international markets. Premium quality with proper packaging.</p>
-        <div class="price-box">
-          <span class="price">Birr1,200 / ton</span>
-          <div class="stars">
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star'></i>
-            <i class='bx bxs-star-half'></i>
+
+        <div
+          class="box product"
+          data-id="3"
+          data-name="Pesticides"
+          data-price="25"
+          data-category="agriculture"
+        >
+          <img src="images/pesticides.jpeg" alt="Pesticides" />
+          <h3>Mancozeb (Fungicide)</h3>
+          <div class="content">
+            <span>Birr 2500</span>
+            <a href="#" class="btn add-to-cart">Add to Cart</a>
           </div>
         </div>
-        <a href="#" class="btn contact-seller" data-seller="4">Contact Seller</a>
+
+        <div
+          class="box product"
+          data-id="4"
+          data-name="Livestock Products"
+          data-price="18.99"
+          data-category="livestock"
+        >
+          <img src="images/cattle.jpeg" alt="Livestock Products" />
+          <h3>Borena Bull Semen/Breed</h3>
+          <div class="content">
+            <span>Birr 18,000.99</span>
+            <a href="#" class="btn add-to-cart">Add to Cart</a>
+          </div>
+        </div>
+
+        <div
+          class="box product"
+          data-id="5"
+          data-name="Farm Protection and Safety Products"
+          data-price="52"
+          data-category="safety"
+        >
+          <img src="images/fence.jpeg" alt="Farm Protection" />
+          <h3>Heavy-Duty Rubber Farming Boots</h3>
+          <div class="content">
+            <span>Birr 520,000</span>
+            <a href="#" class="btn add-to-cart">Add to Cart</a>
+          </div>
+        </div>
+
+        <div
+          class="box product"
+          data-id="6"
+          data-name="Post Harvest and Storage Products"
+          data-price="34"
+          data-category="storage"
+        >
+          <img src="images/harvest.jpeg" alt="Post Harvest Products" />
+          <h3>PICS Bags (Hermetic)</h3>
+          <div class="content">
+            <span>Birr 340,000</span>
+            <a href="#" class="btn add-to-cart">Add to Cart</a>
+          </div>
+        </div>
+
+        <div
+          class="box product"
+          data-id="7"
+          data-name="Herbicides"
+          data-price="14.99"
+          data-category="agriculture"
+        >
+          <img src="images/herbicides.jpeg" alt="Herbicides" />
+          <h3>2,4-D Selective Herbicide</h3>
+          <div class="content">
+            <span>Birr 1400.99</span>
+            <a href="#" class="btn add-to-cart">Add to Cart</a>
+          </div>
+        </div>
+
+        <div
+          class="box product"
+          data-id="8"
+          data-name="Seed and Seedlings"
+          data-price="10"
+          data-category="seeds"
+        >
+          <img src="images/seed.jpeg" alt="Seed and Seedlings" />
+          <h3>Kuyu / Quncho Teff Seed</h3>
+          <div class="content">
+            <span>Birr 1000</span>
+            <a href="#" class="btn add-to-cart">Add to Cart</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Services Section -->
-  <section class="services" id="services">
-    <div class="heading">
-      <h2>OUR SERVICES</h2>
-      <span>How AgroTrade Helps You</span>
-    </div>
-    
-    <div class="services-container">
-      <div class="s-box">
-        <img src="images/sell.jpg" alt="Sell on AgroTrade">
-        <h3>Sell on AgroTrade</h3>
-        <p>Are you a farmer or supplier? List your products here and reach buyers worldwide.</p>
-        <a href="#" class="btn">Register as Seller</a>
+
+      <button class="button">
+        <a href="products.html"><h2>See More</h2></a>
+      </button>
+    </section>
+
+    <!-- Marketplace Section -->
+    <section class="marketplace" id="marketplace">
+      <div class="heading">
+        <h2>Browse Premium Farmer Products Directly From The Farm</h2>
       </div>
-      
-      <div class="s-box">
-        <img src="images/support.jpg" alt="Buyer Support">
-        <h3>Buyer Support</h3>
-        <p>Get assistance with product selection, quality verification, and shipping logistics.</p>
-        <a href="#" class="btn">Contact Support</a>
+
+      <div class="market-container">
+        <!-- Product 1 -->
+        <div
+          class="box market-item"
+          data-id="9"
+          data-name="Export & Local Markets"
+          data-price="300"
+          data-seller="1"
+        >
+          <div class="box-img">
+            <img src="images/export.jpg" alt="Export and Local Markets" />
+          </div>
+          <h3>Export & Local Markets</h3>
+          <p>
+            High-quality products for both export and domestic markets.
+            Certified and tested for quality assurance.
+          </p>
+          <div class="price-box">
+            <span class="price">Birr300 / ton</span>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star-half"></i>
+            </div>
+          </div>
+          <a href="#" class="btn contact-seller" data-seller="1"
+            >Contact Seller</a
+          >
+        </div>
+
+        <!-- Product 2 -->
+        <div
+          class="box market-item"
+          data-id="10"
+          data-name="Iron Certified Farms"
+          data-price="350"
+          data-seller="2"
+        >
+          <div class="box-img">
+            <img src="images/teff.jpg" alt="Iron Certified Farms" />
+          </div>
+          <h3>Iron Certified Farms</h3>
+          <p>
+            Products from iron-certified farms ensuring the highest quality
+            standards and sustainable farming.
+          </p>
+          <div class="price-box">
+            <span class="price">Birr350 / ton</span>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bx-star"></i>
+            </div>
+          </div>
+          <a href="#" class="btn contact-seller" data-seller="2"
+            >Contact Seller</a
+          >
+        </div>
+
+        <!-- Product 3 -->
+        <div
+          class="box market-item"
+          data-id="11"
+          data-name="Premium Coffee Beans"
+          data-price="400"
+          data-seller="3"
+        >
+          <div class="box-img">
+            <img src="images/coffee2.jpg" alt="Coffee Beans" />
+          </div>
+          <h3>Premium Coffee Beans</h3>
+          <p>
+            High-quality coffee beans with certification. Perfect for export
+            with rich aroma and flavor profile.
+          </p>
+          <div class="price-box">
+            <span class="price">Birr400/ton</span>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+            </div>
+          </div>
+          <a href="#" class="btn contact-seller" data-seller="3"
+            >Contact Seller</a
+          >
+        </div>
+
+        <!-- Product 4 -->
+        <div
+          class="box market-item"
+          data-id="12"
+          data-name="Export-Quality Seeds"
+          data-price="1200"
+          data-seller="4"
+        >
+          <div class="box-img">
+            <img src="images/sesame.jpg" alt="Sesame Seeds" />
+          </div>
+          <h3>Export-Quality Seeds</h3>
+          <p>
+            High oil content seeds suitable for international markets. Premium
+            quality with proper packaging.
+          </p>
+          <div class="price-box">
+            <span class="price">Birr1,200 / ton</span>
+            <div class="stars">
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star"></i>
+              <i class="bx bxs-star-half"></i>
+            </div>
+          </div>
+          <a href="#" class="btn contact-seller" data-seller="4"
+            >Contact Seller</a
+          >
+        </div>
       </div>
-      
-      <div class="s-box">
-        <img src="images/logistics.jpg" alt="Logistics">
-        <h3>Global Logistics</h3>
-        <p>We handle export documentation, shipping, and customs clearance for seamless transactions.</p>
-        <a href="#" class="btn">View Options</a>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="heading">
+        <h2>OUR SERVICES</h2>
+        <span>How AgroTrade Helps You</span>
       </div>
-    </div>
-  </section>
-  
-  <section class="footer">
-    <div class="footer-box">
-      <h2>AgroTrade</h2>
-      <p>Connecting farmers with buyers worldwide through our trusted agricultural marketplace platform.</p>
-      <div class="social">
-        <a href="#"><i class='bx bxl-facebook'></i></a>
-        <a href="#"><i class='bx bxl-twitter'></i></a>
-        <a href="#"><i class='bx bxl-instagram'></i></a>
-        <a href="#"><i class='bx bxl-tiktok'></i></a>
+
+      <div class="services-container">
+        <div class="s-box">
+          <img src="images/sell.jpg" alt="Sell on AgroTrade" />
+          <h3>Sell on AgroTrade</h3>
+          <p>
+            Are you a farmer or supplier? List your products here and reach
+            buyers worldwide.
+          </p>
+          <a
+            href="javascript:void(0)"
+            class="btn service-contact-btn"
+            data-service="seller-registration"
+            >Contact Seller</a
+          >
+        </div>
+
+        <div class="s-box">
+          <img src="images/support.jpg" alt="Buyer Support" />
+          <h3>Buyer Support</h3>
+          <p>
+            Get assistance with product selection, quality verification, and
+            shipping logistics.
+          </p>
+          <a
+            href="javascript:void(0)"
+            class="btn service-contact-btn"
+            data-service="buyer-support"
+            >Contact Support</a
+          >
+        </div>
+
+        <div class="s-box">
+          <img src="images/logistics.jpg" alt="Logistics" />
+          <h3>Global Logistics</h3>
+          <p>
+            We handle export documentation, shipping, and customs clearance for
+            seamless transactions.
+          </p>
+          <a
+            href="javascript:void(0)"
+            class="btn service-contact-btn"
+            data-service="global-logistics"
+            >Contact Logistics</a
+          >
+        </div>
       </div>
-    </div>
-    
-    <div class="footer-box">
-      <h3>Support</h3>
-      <li><a href="#">Product</a></li>
-      <li><a href="#">Help & Support</a></li>
-      <li><a href="#">Return Policy</a></li>
-      <li><a href="#">Terms of Use</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-    </div>
-    
-    <div class="footer-box">
-      <h3>View Guides</h3>
-      <li><a href="#">Features</a></li>
-      <li><a href="#">Careers</a></li>
-      <li><a href="#">Blog Posts</a></li>
-      <li><a href="#">Our Branches</a></li>
-    </div>
-    
-    <div class="footer-box">
-      <h3>Contact</h3>
-      <span><i class='bx bxs-map'></i>4 Kilo, AgroTrade BLDG, Addis Ababa, Ethiopia</span><br>
-      <span><i class='bx bxs-phone'></i>+251 929 2475 73</span><br>
-      <span><i class='bx bxs-envelope'></i>agrotrade@email.com</span>
-    </div>
-  </section>
-  
-  <!--Copyright-->
-  <div class="copyright">
-    <p>@ 2026, AgroTrade All Rights Reserved</p>
-  </div>
-  
-  <!-- Shopping Cart Sidebar -->
-  <aside id="cart-sidebar" class="cart-sidebar">
-    <div class="cart-header">
-      <h2>Your Cart</h2>
-      <button id="close-cart" class="close-cart">&times;</button>
-    </div>
-    
-    <div class="cart-items">
-      <!-- Cart items will be dynamically added here -->
-    </div>
-    
-    <div class="cart-footer">
-      <div class="cart-total">
-        <span>Total:</span>
-        <span id="cart-total-price">$0.00</span>
+    </section>
+
+    <section class="footer">
+      <div class="footer-box">
+        <h2>AgroTrade</h2>
+        <p>
+          Connecting farmers with buyers worldwide through our trusted
+          agricultural marketplace platform.
+        </p>
+        <div class="social">
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
+          <a href="#"><i class="bx bxl-tiktok"></i></a>
+        </div>
       </div>
-      <button id="checkout-btn" class="checkout-btn">Checkout</button>
+
+      <div class="footer-box">
+        <h3>Support</h3>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Help & Support</a></li>
+        <li><a href="#">Return Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </div>
+
+      <div class="footer-box">
+        <h3>View Guides</h3>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog Posts</a></li>
+        <li><a href="#">Our Branches</a></li>
+      </div>
+
+      <div class="footer-box">
+        <h3>Contact</h3>
+        <span
+          ><i class="bx bxs-map"></i>4 Kilo, AgroTrade BLDG, Addis Ababa,
+          Ethiopia</span
+        ><br />
+        <span><i class="bx bxs-phone"></i>+251 929 2475 73</span><br />
+        <span><i class="bx bxs-envelope"></i>agrotrade@email.com</span>
+      </div>
+    </section>
+
+    <!--Copyright-->
+    <div class="copyright">
+      <p>@ 2026, AgroTrade All Rights Reserved</p>
     </div>
-  </aside>
-  
-<!-- Add this before main.js or products.js -->
-<script src="cart.js"></script>
-<script src="main.js"></script> 
-</body>
+
+    <!-- Shopping Cart Sidebar -->
+    <aside id="cart-sidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button id="close-cart" class="close-cart">&times;</button>
+      </div>
+
+      <div class="cart-items">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cart-total-price">$0.00</span>
+        </div>
+        <button id="checkout-btn" class="checkout-btn">Checkout</button>
+      </div>
+    </aside>
+
+    <!-- Add this before main.js or products.js -->
+    <script src="cart.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
