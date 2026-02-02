@@ -1,29 +1,29 @@
 // Products data
 const productsData = [
-  { id: 1, name: "Fertilizer", price: 20, category: "agriculture", image: "images/fertilizer.jpeg" },
-  { id: 2, name: "Machinery", price: 20000, category: "equipment", image: "images/machinery.jpeg" },
-  { id: 3, name: "Pesticides", price: 25, category: "agriculture", image: "images/pesticides.jpeg" },
-  { id: 4, name: "Livestock Products", price: 18.99, category: "livestock", image: "images/cattle.jpeg" },
-  { id: 5, name: "Herbicides", price: 14.99, category: "agriculture", image: "images/herbicides.jpeg" },
-  { id: 6, name: "Seed and Seedlings", price: 10, category: "seeds", image: "images/seed.jpeg" },
-  { id: 7, name: "Farm Protection", price: 52, category: "safety", image: "images/fence.jpeg" },
-  { id: 8, name: "Harvest Products", price: 34, category: "storage", image: "images/harvest.jpeg" },
-  { id: 9, name: "Export Products", price: 300, category: "agriculture", image: "images/export.jpg" },
-  { id: 10, name: "Teff Products", price: 350, category: "seeds", image: "images/teff.jpg" },
-  { id: 11, name: "Coffee Beans", price: 400, category: "agriculture", image: "images/coffee2.jpg" },
-  { id: 12, name: "Sesame Seeds", price: 1200, category: "seeds", image: "images/sesame.jpg" },
-  { id: 13, name: "Organic Fertilizer", price: 28, category: "agriculture", image: "images/fertilizer.jpeg" },
-  { id: 14, name: "Tractor", price: 45000, category: "equipment", image: "images/machinery.jpeg" },
-  { id: 15, name: "Organic Pesticides", price: 32, category: "agriculture", image: "images/pesticides.jpeg" },
-  { id: 16, name: "Dairy Products", price: 22.50, category: "livestock", image: "images/cattle.jpeg" },
-  { id: 17, name: "Safety Gear", price: 45, category: "safety", image: "images/fence.jpeg" },
-  { id: 18, name: "Grain Storage", price: 120, category: "storage", image: "images/harvest.jpeg" },
-  { id: 19, name: "Wheat Seeds", price: 15, category: "seeds", image: "images/seed.jpeg" },
-  { id: 20, name: "Corn Seeds", price: 12, category: "seeds", image: "images/seed.jpeg" },
-  { id: 21, name: "Irrigation System", price: 1200, category: "equipment", image: "images/machinery.jpeg" },
-  { id: 22, name: "Poultry Equipment", price: 180, category: "livestock", image: "images/cattle.jpeg" },
-  { id: 23, name: "Greenhouse Materials", price: 850, category: "equipment", image: "images/fence.jpeg" },
-  { id: 24, name: "Soil Testing Kit", price: 89, category: "agriculture", image: "images/fertilizer.jpeg" }
+  { id: 1, name: "Fertilizer", price: 20, category: "agriculture", image:"/images/fertilizer.jpeg" },
+  { id: 2, name: "Machinery", price: 20000, category: "equipment", image: "/images/machinery.jpeg" },
+  { id: 3, name: "Pesticides", price: 25, category: "agriculture", image: "/images/pesticides.jpeg" },
+  { id: 4, name: "Livestock Products", price: 18.99, category: "livestock", image: "/images/cattle.jpeg" },
+  { id: 5, name: "Herbicides", price: 14.99, category: "agriculture", image: "/images/herbicides.jpeg" },
+  { id: 6, name: "Seed and Seedlings", price: 10, category: "seeds", image: "/images/seed.jpeg" },
+  { id: 7, name: "Farm Protection", price: 52, category: "safety", image: "/images/fence.jpeg" },
+  { id: 8, name: "Harvest Products", price: 34, category: "storage", image: "/images/harvest.jpeg" },
+  { id: 9, name: "Export Products", price: 300, category: "agriculture", image: "/images/export.jpg" },
+  { id: 10, name: "Teff Products", price: 350, category: "seeds", image: "/images/teff.jpg" },
+  { id: 11, name: "Coffee Beans", price: 400, category: "agriculture", image: "/images/coffee2.jpg" },
+  { id: 12, name: "Sesame Seeds", price: 1200, category: "seeds", image: "/images/sesame.jpg" },
+  { id: 13, name: "Organic Fertilizer", price: 28, category: "agriculture", image: "/images/fertilizer.jpeg" },
+  { id: 14, name: "Tractor", price: 45000, category: "equipment", image: "/images/machinery.jpeg" },
+  { id: 15, name: "Organic Pesticides", price: 32, category: "agriculture", image: "/images/pesticides.jpeg" },
+  { id: 16, name: "Dairy Products", price: 22.50, category:"livestock", image:"/images/cattle.jpeg" },
+  { id: 17, name: "Safety Gear", price: 45, category: "safety", image: "/images/fence.jpeg" },
+  { id: 18, name: "Grain Storage", price: 120, category: "storage", image: "/images/harvest.jpeg" },
+  { id: 19, name: "Wheat Seeds", price: 15, category: "seeds", image: "/images/seed.jpeg" },
+  { id: 20, name: "Corn Seeds", price: 12, category: "seeds", image: "/images/seed.jpeg" },
+  { id: 21, name: "Irrigation System", price: 1200, category: "equipment", image: "/images/machinery.jpeg" },
+  { id: 22, name: "Poultry Equipment", price: 180, category: "livestock", image: "/images/cattle.jpeg" },
+  { id: 23, name: "Greenhouse Materials", price: 850, category: "equipment", image: "/images/fence.jpeg" },
+  { id: 24, name: "Soil Testing Kit", price: 89, category:"agriculture", image:"/images/fertilizer.jpeg" }  
 ];
 
 // DOM Elements
@@ -435,6 +435,7 @@ function showToast(message) {
   toast.textContent = message;
   document.body.appendChild(toast);
   
+
   setTimeout(() => {
     toast.classList.add('show');
   }, 10);

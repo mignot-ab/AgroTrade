@@ -125,56 +125,33 @@ function addToCart(id, name, price, image) {
 
 // Update cart display
 function updateCart() {
-  cartItemsContainer.innerHTML = '';
   cartTotal = 0;
-  
-  if (cart.length === 0) {
-    cartItemsContainer.innerHTML = '<p>Your cart is empty</p>';
-    cartTotalPrice.textContent = '$0.00';
-    cartCount.textContent = '0';
-    return;
-  }
-  
+  cartItemsContainer.innerHTML = '';
   cart.forEach(item => {
     const itemTotal = item.price * item.quantity;
     cartTotal += itemTotal;
     
-    const cartItemElement = document.createElement('div');
-    cartItemElement.className = 'cart-item';
-    cartItemElement.innerHTML = `
-      <img src="${item.image}" alt="${item.name}" class="cart-item-image" onerror="this.src='https://via.placeholder.com/60'">
+    const cartItem = document.createElement('div');
+    cartItem.className = 'cart-item';
+    cartItem.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
       <div class="cart-item-details">
-        <h4 class="cart-item-name">${item.name}</h4>
-        <p class="cart-item-price">$${item.price.toFixed(2)}</p>
-        <div class="cart-item-quantity">
-          <button class="quantity-btn minus" data-id="${item.id}">-</button>
-          <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-id="${item.id}">
-          <button class="quantity-btn plus" data-id="${item.id}">+</button>
+        <h4>${item.name}</h4>
+        <p>Price: $${item.price.toFixed(2)}</p>
+        <div class="quantity-controls">
+          <button class="minus" data-id="${item.id}">-</button>
+          <input type="number" value="${item.quantity}" min="1" data-id="${item.id}">
+          <button class="plus" data-id="${item.id}">+</button>
         </div>
         <button class="remove-item" data-id="${item.id}">Remove</button>
       </div>
     `;
-    
-    cartItemsContainer.appendChild(cartItemElement);
+    cartItemsContainer.appendChild(cartItem);
   });
-  
-  // Update cart total and count
   cartTotalPrice.textContent = `$${cartTotal.toFixed(2)}`;
-  cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
-  
-  // Add event listeners to quantity buttons
-  document.querySelectorAll('.quantity-btn').forEach(btn => {
-    btn.addEventListener('click', handleQuantityChange);
-  });
-  
-  document.querySelectorAll('.quantity-input').forEach(input => {
-    input.addEventListener('change', handleQuantityInput);
-  });
-  
-  document.querySelectorAll('.remove-item').forEach(btn => {
-    btn.addEventListener('click', handleRemoveItem);
-  });
+  cartCount.textContent = cart.length;
 }
+
 
 // Handle quantity change
 function handleQuantityChange(e) {
@@ -230,3 +207,93 @@ document.getElementById('checkout-btn').addEventListener('click', () => {
   saveCartToStorage();
   cartSidebar.classList.remove('active');
 });
+
+
+  // Select form using DOM
+ document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("contactForm");
+    const messageBox = document.getElementById("formMessage");
+
+    const fullName = document.getElementById("fullName");
+    const email = document.getElementById("email");
+    const subject = document.getElementById("subject");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let valid = true;
+
+        // Clear styles
+        [fullName, email, subject, message].forEach(field => {
+            field.style.borderColor = "";
+        });
+
+        // Validation
+        if (fullName.value.trim() === "") {
+            fullName.style.borderColor = "red";
+            valid = false;
+        }
+
+        if (email.value.trim() === "") {
+            email.style.borderColor = "red";
+            valid = false;
+        }
+
+        if (subject.value.trim() === "") {
+            subject.style.borderColor = "red";
+            valid = false;
+        }
+
+        if (message.value.trim() === "") {
+            message.style.borderColor = "red";
+            valid = false;
+        }
+
+        if (!valid) {
+            messageBox.textContent = "❌ Please fill in all required fields.";
+            messageBox.style.color = "red";
+            return;
+        }
+
+        // Success
+        messageBox.textContent = "✅ Message sent successfully!";
+        messageBox.style.color = "green";
+
+        form.reset();
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+
+  const sellerOverlay = document.getElementById("seller-overlay");
+  const closeSeller = document.getElementById("close-seller");
+
+  // OPEN OVERLAY
+  document.querySelectorAll(".contact-seller").forEach(button => {
+    button.addEventListener("click", () => {
+      sellerOverlay.classList.add("active");
+    });
+  });
+
+  // CLOSE BUTTON
+  closeSeller.addEventListener("click", () => {
+    sellerOverlay.classList.remove("active");
+  });
+
+  // CLICK OUTSIDE MODAL
+  sellerOverlay.addEventListener("click", (e) => {
+    if (e.target === sellerOverlay) {
+      sellerOverlay.classList.remove("active");
+    }
+  });
+
+  // ESC KEY
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      sellerOverlay.classList.remove("active");
+    }
+  });
+
+});
+
