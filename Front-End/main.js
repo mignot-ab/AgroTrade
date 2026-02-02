@@ -30,6 +30,7 @@ window.addEventListener('scroll', () => {
 const sellers = {
   1: {
     name: "Green Farms Ltd.",
+    image: "images/alazar.jpeg",
     company: "Green Farms Export",
     location: "Addis Ababa, Ethiopia",
     phone: "+251 911 234 567",
@@ -42,6 +43,7 @@ const sellers = {
   },
   2: {
     name: "Iron Farm Collective",
+    image: "images/leul.jpeg",
     company: "Iron Certified Farms Co.",
     location: "Oromia Region, Ethiopia",
     phone: "+251 922 345 678",
@@ -54,6 +56,7 @@ const sellers = {
   },
   3: {
     name: "Coffee Masters Ethiopia",
+    image: "images/export.jpg",
     company: "Ethiopian Coffee Exporters",
     location: "Sidama Zone, Ethiopia",
     phone: "+251 933 456 789",
@@ -66,6 +69,7 @@ const sellers = {
   },
   4: {
     name: "Seed Excellence Group",
+    image: "images/export.jpg",
     company: "Premium Seed Producers",
     location: "Amhara Region, Ethiopia",
     phone: "+251 944 567 890",
@@ -100,11 +104,14 @@ const sellerCerts = document.getElementById('seller-certs');
 const sellerDescription = document.getElementById('seller-description-text');
 const sendMessageBtn = document.getElementById('send-message');
 const messageToSeller = document.getElementById('message-to-seller');
+const sellerImage = document.getElementById("seller-image");
+
 
 // Extended Seller Data Configuration - ADDED FROM SECOND CODE
 const sellerData = {
   'fertilizer': {
     name: 'John AgriTech',
+    image: "images/sell.jpg",
     company: 'AgroSupplies Inc.',
     location: 'Addis Ababa, Ethiopia',
     phone: '+251 911 223 344',
@@ -116,6 +123,7 @@ const sellerData = {
   },
   'machinery': {
     name: 'Michael FarmTech',
+    image: "images/sell.jpg",
     company: 'FarmTech Co.',
     location: 'Nairobi, Kenya',
     phone: '+251 922 334 455',
@@ -127,6 +135,7 @@ const sellerData = {
   },
   'pesticides': {
     name: 'Sarah CropCare',
+    image: "images/sell.jpg",
     company: 'CropGuard Ltd.',
     location: 'Kampala, Uganda',
     phone: '+251 933 445 566',
@@ -138,6 +147,7 @@ const sellerData = {
   },
   'livestock': {
     name: 'David Livestock',
+    image: "images/sell.jpg",
     company: 'Livestock Hub',
     location: 'Addis Ababa, Ethiopia',
     phone: '+251 944 556 677',
@@ -149,6 +159,7 @@ const sellerData = {
   },
   'farm-protection': {
     name: 'Robert Secure',
+    image: "images/sell.jpg",
     company: 'SecureFarm Inc.',
     location: 'Dar es Salaam, Tanzania',
     phone: '+251 955 667 788',
@@ -160,6 +171,7 @@ const sellerData = {
   },
   'post-harvest': {
     name: 'Lisa Harvest',
+    image: "images/sell.jpg",
     company: 'Harvest Solutions',
     location: 'Kigali, Rwanda',
     phone: '+251 966 778 899',
@@ -171,6 +183,7 @@ const sellerData = {
   },
   'herbicides': {
     name: 'Thomas WeedFree',
+    image: "images/sell.jpg",
     company: 'WeedFree Agro',
     location: 'Addis Ababa, Ethiopia',
     phone: '+251 977 889 900',
@@ -182,6 +195,7 @@ const sellerData = {
   },
   'seed-seedlings': {
     name: 'Maria SeedMaster',
+    image: "images/sell.jpg",
     company: 'SeedMaster Co.',
     location: 'Nairobi, Kenya',
     phone: '+251 988 990 011',
@@ -193,6 +207,7 @@ const sellerData = {
   },
   'export-local': {
     name: 'James GlobalTrade',
+    image: "images/sell.jpg",
     company: 'Global Export Co.',
     location: 'Addis Ababa, Ethiopia',
     phone: '+251 911 111 222',
@@ -204,6 +219,7 @@ const sellerData = {
   },
   'iron-certified': {
     name: 'Anna Premium',
+    image: "images/sell.jpg",
     company: 'Premium Farms Ltd.',
     location: 'Hawassa, Ethiopia',
     phone: '+251 922 222 333',
@@ -215,6 +231,7 @@ const sellerData = {
   },
   'coffee-beans': {
     name: 'Carlos Coffee',
+    image: "images/sell.jpg",
     company: 'Coffee Masters Inc.',
     location: 'Jimma, Ethiopia',
     phone: '+251 933 333 444',
@@ -226,6 +243,7 @@ const sellerData = {
   },
   'sesame-seeds': {
     name: 'Fatima Sesame',
+    image: "images/sell.jpg",
     company: 'Sesame Exporters',
     location: 'Gondar, Ethiopia',
     phone: '+251 944 444 555',
@@ -238,6 +256,7 @@ const sellerData = {
   // Services Section Sellers
   'seller-registration': {
     name: 'AgroTrade Team',
+    image: "images/armah.jpeg",
     company: 'AgroTrade Sales',
     location: 'Addis Ababa, Ethiopia',
     phone: '+251 955 555 666',
@@ -249,6 +268,7 @@ const sellerData = {
   },
   'buyer-support': {
     name: 'Support Team',
+    image: "images/armah.jpeg",
     company: 'AgroTrade Support',
     location: 'Addis Ababa, Ethiopia',
     phone: '+251 966 666 777',
@@ -260,6 +280,7 @@ const sellerData = {
   },
   'global-logistics': {
     name: 'Logistics Team',
+    image: "images/armah.jpeg",
     company: 'AgroTrade Logistics',
     location: 'Addis Ababa, Ethiopia',
     phone: '+251 977 777 888',
@@ -324,55 +345,32 @@ document.querySelectorAll('.contact-seller, .service-contact-btn').forEach(butto
 
 function showSellerOverlayFromMarketplace(sellerId) {
   const seller = sellers[sellerId];
-  
-  if (seller) {
-    sellerName.textContent = seller.name;
-    sellerCompany.textContent = seller.company;
-    sellerLocation.textContent = seller.location;
-    sellerPhone.textContent = seller.phone;
-    sellerEmail.textContent = seller.email;
-    sellerProducts.textContent = seller.products;
-    sellerCerts.textContent = seller.certifications;
-    sellerDescription.textContent = seller.description;
-    
-    // Update rating stars
-    const ratingContainer = document.querySelector('.seller-rating');
-    ratingContainer.innerHTML = '';
-    
-    const fullStars = Math.floor(seller.rating);
-    const hasHalfStar = seller.rating % 1 !== 0;
-    
-    for (let i = 0; i < 5; i++) {
-      const star = document.createElement('i');
-      if (i < fullStars) {
-        star.className = 'bx bxs-star';
-      } else if (i === fullStars && hasHalfStar) {
-        star.className = 'bx bxs-star-half';
-      } else {
-        star.className = 'bx bx-star';
-      }
-      ratingContainer.appendChild(star);
-    }
-    
-    const ratingText = document.createElement('span');
-    ratingText.className = 'rating-text';
-    ratingText.textContent = `${seller.rating} (${seller.reviews} reviews)`;
-    ratingContainer.appendChild(ratingText);
-    
-    sellerOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+  if (!seller) return;
+
+  sellerImage.src = seller.image;
+  sellerImage.alt = seller.name;
+
+  sellerName.textContent = seller.name;
+  sellerCompany.textContent = seller.company;
+  sellerLocation.textContent = seller.location;
+  sellerPhone.textContent = seller.phone;
+  sellerEmail.textContent = seller.email;
+  sellerProducts.textContent = seller.products;
+  sellerCerts.textContent = seller.certifications;
+  sellerDescription.textContent = seller.description;
+
+  sellerOverlay.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
 
-function showSellerOverlayFromProduct(productType) {
-  const seller = sellerData[productType];
-  
-  if (!seller) {
-    console.warn(`No seller data found for product type: ${productType}`);
-    return;
-  }
 
-  // Update all seller information
+function showSellerOverlayFromProduct(type) {
+  const seller = sellerData[type];
+  if (!seller) return;
+
+  //sellerImage.src = seller.image;
+  sellerImage.alt = seller.name;
+
   sellerName.textContent = seller.name;
   sellerCompany.textContent = seller.company;
   sellerLocation.textContent = seller.location;
@@ -382,30 +380,10 @@ function showSellerOverlayFromProduct(productType) {
   sellerCerts.textContent = seller.certs;
   sellerDescription.textContent = seller.description;
 
-  // Update rating stars
-  const stars = document.querySelectorAll('.seller-rating i');
-  const ratingText = document.querySelector('.rating-text');
-  
-  const fullStars = Math.floor(seller.rating);
-  const hasHalfStar = seller.rating % 1 >= 0.5;
-  
-  stars.forEach((star, index) => {
-    if (index < fullStars) {
-      star.className = 'bx bxs-star';
-    } else if (index === fullStars && hasHalfStar) {
-      star.className = 'bx bxs-star-half';
-    } else {
-      star.className = 'bx bx-star';
-    }
-  });
-  
-  // Generate random review count for services
-  const reviewCount = Math.floor(Math.random() * 100) + 50;
-  ratingText.textContent = `${seller.rating} (${reviewCount} reviews)`;
-  
-  sellerOverlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  sellerOverlay.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
+
 
 // Close seller overlay
 if (closeSeller) {
