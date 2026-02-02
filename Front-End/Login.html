@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - AgroTrade</title>
-    <link rel="stylesheet" href="logs.css">
-    <link rel="icon" type="image/jpeg" href="images/armah.jpeg">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login - AgroTrade</title>
+	<link rel="stylesheet" href="logs.css">
+	<link rel="icon" type="image/jpeg" href="images/armah.jpeg">
 </head>
+
 <body style="
   height: 100vh;
   background:
@@ -14,55 +16,48 @@
     url('images/login.JPG') center / cover no-repeat;
 ">
 
-<section class="login-section">
-    <!-- IMPORTANT: action + method added -->
-    
-    <form class="login-form" action="login.php" method="POST">
-        <div class="avatar">
-         <img src="images/armah.jpeg" alt="">
-        </div>
-        
-        <h2>Login to AgroTrade</h2>
+	<section class="login-section">
+		<!-- The action and method attributes have been removed. JS will handle submission. -->
+		<form class="login-form" id="loginForm">
+			<div class="avatar">
+				<img src="images/armah.jpeg" alt="">
+			</div>
 
-        <div class="input-box">
-            <!-- name="login" matches login.php -->
-            <input
-                type="text"
-                name="login"
-                placeholder="Username or Email"
-                required
-            >
-        </div>
+			<h2>Login to AgroTrade</h2>
 
-        <div class="input-box">
-            <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                required
-            >
-        </div>
+			<div class="input-box">
+				<!-- Changed name to id for easier JS selection -->
+				<input type="email" id="email" placeholder="Email address">
+			</div>
 
-        <button type="submit" class="login-btn">Login</button>
+			<div class="input-box">
+				<input type="password" id="password" placeholder="Password">
+			</div>
 
-        <!-- Forgot password -->
-        <p style="margin-top: 0.7rem; font-size: 0.85rem;">
-            <a href="forgot_password.html" >
-                Forgot password?
-            </a>
-        </p>
+			<button type="submit" class="login-btn">Login</button>
 
-        <!-- Register -->
-        <p style="margin-top: 1rem; font-size: 0.9rem;">
-            Don't have an account?
-            <a href="signup.html" >Sign Up</a>
-        </p>
+			<p id="message" style="margin-top: 1rem; color: white; text-align: center;"></p>
 
-        <a href="index.html">
-            ← Back to Home
-        </a>
-    </form>
-</section>
+			<!-- Forgot password -->
+			<p style="margin-top: 0.7rem; font-size: 0.85rem;">
+				<a href="forgot_password.html">
+					Forgot password?
+				</a>
+			</p>
 
+			<!-- Register -->
+			<p style="margin-top: 1rem; font-size: 0.9rem;">
+				Don't have an account?
+				<a href="signup.html">Sign Up</a>
+			</p>
+
+			<a href="index.html">
+				← Back to Home
+			</a>
+		</form>
+	</section>
+
+	<script src="login.js"></script>
 </body>
+
 </html>
