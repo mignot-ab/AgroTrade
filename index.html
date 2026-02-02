@@ -1,4 +1,4 @@
-
+[file content begin]
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -344,63 +344,20 @@
 </div>
 
 <!-- Contact Seller Overlay -->
-<!-- Seller Contact Overlay -->
-  <div id="seller-overlay" class="seller-overlay">
-    <div class="seller-modal">
-      <button id="close-seller" class="close-btn">&times;</button>
-      <div class="seller-content">
-        <img src="images/seller-profile.jpg" alt="Seller Profile" class="seller-profile-img">
-        <h2 id="seller-name">Seller Name</h2>
-        <div class="seller-rating">
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star'></i>
-          <i class='bx bxs-star-half'></i>
-          <span class="rating-text">4.5 (120 reviews)</span>
-        </div>
-        
-        <div class="seller-info">
-          <div class="info-item">
-            <i class='bx bxs-user'></i>
-            <span><strong>Company:</strong> <span id="seller-company">Green Farms Ltd.</span></span>
-          </div>
-          <div class="info-item">
-            <i class='bx bxs-location-plus'></i>
-            <span><strong>Location:</strong> <span id="seller-location">Addis Ababa, Ethiopia</span></span>
-          </div>
-          <div class="info-item">
-            <i class='bx bxs-phone'></i>
-            <span><strong>Phone:</strong> <span id="seller-phone">+251 911 234 567</span></span>
-          </div>
-          <div class="info-item">
-            <i class='bx bxs-envelope'></i>
-            <span><strong>Email:</strong> <span id="seller-email">seller@greenfarms.com</span></span>
-          </div>
-          <div class="info-item">
-            <i class='bx bxs-business'></i>
-            <span><strong>Products:</strong> <span id="seller-products">Teff, Coffee, Sesame</span></span>
-          </div>
-          <div class="info-item">
-            <i class='bx bxs-certification'></i>
-            <span><strong>Certifications:</strong> <span id="seller-certs">Organic, ISO 9001</span></span>
-          </div>
-        </div>
-        
-        <div class="seller-description">
-          <h3>About the Seller</h3>
-          <p id="seller-description-text">This is a certified organic farm with over 15 years of experience in agricultural exports. We specialize in high-quality teff, coffee, and sesame seeds for international markets.</p>
-        </div>
-        
-        <div class="seller-contact-form">
-          <h3>Send Message</h3>
-          <textarea id="message-to-seller" placeholder="Type your message here..." rows="4"></textarea>
-          <button id="send-message" class="btn">Send Message</button>
-        </div>
-      </div>
-    </div>
+<div class="overlay" id="contactOverlay">
+  <div class="modal">
+    <span class="close-btn" id="closeContactOverlay">&times;</span>
+    <h2 id="contactProductName">Contact Seller</h2>
+    <p><strong>Product:</strong> <span id="contactProduct"></span></p>
+    <p><strong>Seller:</strong> <span id="contactSeller"></span></p>
+    <p><strong>Phone:</strong> <span id="contactPhone"></span></p>
+    <p><strong>Email:</strong> <span id="contactEmail"></span></p>
+    <p><strong>Office Hours:</strong> Monday-Friday, 8:00 AM - 5:00 PM</p>
+    <p>Please contact the seller directly using the phone number above to discuss pricing, delivery, and other details.</p>
   </div>
+</div>
 
 <script src="main.js"></script>
 </body>
 </html>
+[file content end]
