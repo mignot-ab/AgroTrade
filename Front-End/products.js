@@ -414,6 +414,14 @@ function handleRemoveItem(e) {
 }
 
 function handleCheckout() {
+  const urlParams = new URLSearchParams(window.location.search)
+
+  if (!urlParams.has('id')) {
+    window.location.href = 'login.html'
+    return;
+  } else {
+    console.log("access granted")
+  }
   const currentCart = getCartItems();
   if (currentCart.length === 0) {
     alert('Your cart is empty!');

@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => { // when the html has been 
 					messageDisplay.textContent = data.message;
 					messageDisplay.style.color = 'lime';
 					console.log('Login successful:', data.user);
+					const userId = data.user.id
+					window.location.href = `index.html?id=${userId}`;
 				} else {
 					messageDisplay.textContent = data.message || 'Login failed.';
 					messageDisplay.style.color = 'red';

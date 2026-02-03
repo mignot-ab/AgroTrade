@@ -43,7 +43,7 @@ app.post("/login", async (req, res) => {
 		if (rows.length == 0) return res.status(401).json({ message: 'Invalid email or password' });
 
 		const user = rows[0];
-        console.log(user.password)
+		console.log(user.password)
 
 
 		if (password === user.password_hash) {
@@ -58,6 +58,34 @@ app.post("/login", async (req, res) => {
 	} catch (err) {
 		console.error('Database Error: ', err);
 		res.status(500).json({ message: 'Server error' })
+	}
+})
+
+app.post("/signup", async (req, res) => {
+	const { fullname, username, email, password } = req.body;
+
+
+	try {
+		const [result] = await db.execute(
+			'INSERT INTO users (username, email, password_hash, full_name) VALUES (?, ?, ?, ?)',
+			[username, email, password, fullname]
+		);
+
+		const userId = result.insertId;
+
+		res.status(201).json({
+			message: "User created successfully",
+			userId: userId
+		})
+
+		console.log("User created")
+	} catch (error) {
+		if (error.code === 'ER_DUP_ENTRY') {
+			console.error(error)
+			res.status(409).json({ message: "User with this credential already exists" })
+		} else {
+			res.status(500).json({ message: "Server Error" })
+		}
 	}
 })
 
